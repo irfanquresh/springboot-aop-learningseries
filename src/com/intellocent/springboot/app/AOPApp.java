@@ -22,10 +22,14 @@ public class AOPApp {
 		// membershipDAO.addFamilyAccount();
 
 		Account account = new Account();
-		
-		account.getName("ABC");
+
+		accountDAO.setName("ABC");
+		accountDAO.setServiceCode("ABC001");
+		accountDAO.getName();
+		accountDAO.getServiceCode();
 		accountDAO.addAccount(account, true);
 		accountDAO.addFamilyAccount(account);
+
 		membershipDAO.addAccount(account);
 		membershipDAO.addFamilyAccount(account);
 
