@@ -6,12 +6,10 @@ public class Account {
 	private String level;
 
 	public String getName(String name) {
-		System.out.println("get Name called:" + name);
 		return name;
 	}
 
 	public String getName() {
-		System.out.println("get Name called");
 		return name;
 	}
 

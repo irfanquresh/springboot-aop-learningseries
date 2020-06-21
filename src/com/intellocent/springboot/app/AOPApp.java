@@ -22,6 +22,8 @@ public class AOPApp {
 		// membershipDAO.addFamilyAccount();
 
 		Account account = new Account();
+		account.setLevel("Gold");
+		account.setName("Vadhia");
 
 		accountDAO.setName("ABC");
 		accountDAO.setServiceCode("ABC001");
