@@ -10,18 +10,28 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-	@Before("execution(public void addAccount())")
+	// @Before("execution(public void addAccount())")
+	// @Before("execution(public void
+	// com.intellocent.springboot.dao.AccountDAO.addAccount())")
+	// @Before("execution(public void add*())")
+	@Before("execution(* add*())")
 	public void beforeExecution() {
-		System.out.println("Logging: Starting Add account execution");
+		System.out.println("Aspect Logging: Starting Add account execution");
 	}
 
-	@AfterReturning("execution(public void addAccount())")
-	public void afterReturnExecution() {
-		System.out.println("Logging: Completing Add account execution");
+	// @AfterReturning("execution(public void addAccount())")
+	// @AfterReturning("execution(public void
+	// com.intellocent.springboot.dao.AccountDAO.addAccount())")
+	// @AfterReturning("execution(public void add*())")
+	@AfterReturning("execution(* add*())")
+	public int afterReturnExecution() {
+		System.out.println("Aspect Logging: Completing Add account execution");
+		System.out.println("-------------------------------");
+		return 1;
 	}
 
-	@AfterThrowing("execution(public void addAccount())")
+	// @AfterThrowing("execution(public void addAccount())")
 	public void afterException() {
-		System.out.println("Logging: Exception in Add execution");
+		System.out.println("Aspect Logging: Exception in Add execution");
 	}
 }
