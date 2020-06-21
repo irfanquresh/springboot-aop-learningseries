@@ -8,22 +8,18 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class LoggingAspect {
+public class LoggingMethodAndParamsAspect {
 
-	// @Before("execution(public void addAccount())")
-	// @Before("execution(public void
-	// com.intellocent.springboot.dao.AccountDAO.addAccount())")
-	// @Before("execution(public void add*())")
-	@Before("execution(* add*())")
+//	@Before("execution(* add*(com.intellocent.springboot.entity.Account,..))")
+//	@Before("execution(* add*(..))")
+	@Before("execution(* com.intellocent.springboot.dao.*.*(..))")
 	public void beforeExecution() {
 		System.out.println("Aspect Logging: Starting Add account execution");
 	}
 
-	// @AfterReturning("execution(public void addAccount())")
-	// @AfterReturning("execution(public void
-	// com.intellocent.springboot.dao.AccountDAO.addAccount())")
-	// @AfterReturning("execution(public void add*())")
-	@AfterReturning("execution(* add*())")
+//	@AfterReturning("execution(* add*(com.intellocent.springboot.entity.Account,..))")
+//	@AfterReturning("execution(* add*(..))")
+	@AfterReturning("execution(* com.intellocent.springboot.dao.*.*(..))")
 	public int afterReturnExecution() {
 		System.out.println("Aspect Logging: Completing Add account execution");
 		System.out.println("-------------------------------");
