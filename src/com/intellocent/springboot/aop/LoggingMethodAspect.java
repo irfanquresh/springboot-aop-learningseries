@@ -6,12 +6,13 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class LoggingMethodAspect {
 
 	// @Before("execution(public void addAccount())")
-	// @Before("execution(public void com.intellocent.springboot.dao.AccountDAO.addAccount())")
+	// @Before("execution(public void
+	// com.intellocent.springboot.dao.AccountDAO.addAccount())")
 	// @Before("execution(public void add*())")
 	@Before("execution(* add*())")
 	public void beforeExecution() {
@@ -19,7 +20,8 @@ public class LoggingMethodAspect {
 	}
 
 	// @AfterReturning("execution(public void addAccount())")
-	// @AfterReturning("execution(public void com.intellocent.springboot.dao.AccountDAO.addAccount())")
+	// @AfterReturning("execution(public void
+	// com.intellocent.springboot.dao.AccountDAO.addAccount())")
 	// @AfterReturning("execution(public void add*())")
 	@AfterReturning("execution(* add*())")
 	public int afterReturnExecution() {
