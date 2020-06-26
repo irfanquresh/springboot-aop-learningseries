@@ -1,5 +1,8 @@
 package com.intellocent.springboot.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.intellocent.springboot.entity.Account;
@@ -18,6 +21,25 @@ public class AccountDAO {
 	public void addFamilyAccount(Account account) throws Exception {
 		System.out.println(getClass() + ": Adding Family Account...");
 		// throw new Exception();
+	}
+
+	public List<Account> findAccount(boolean flag) {
+
+		if (flag) {
+			throw new RuntimeException("Oh nooo");
+		}
+
+		List<Account> myAccounts = new ArrayList<Account>();
+
+		Account temp1 = new Account("Irfan", "Gold");
+		Account temp2 = new Account("Irfan2", "Gold2");
+		Account temp3 = new Account("Irfan3", "Gold3");
+
+		myAccounts.add(temp1);
+		myAccounts.add(temp2);
+		myAccounts.add(temp3);
+
+		return myAccounts;
 	}
 
 	public String getName() {
